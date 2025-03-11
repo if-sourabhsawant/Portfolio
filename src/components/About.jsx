@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion';
 
 const About = () => {
-  // Generate a QR code URL that points directly to your resume on your Netlify site
+  // Use a direct Netlify URL for the resume
   const resumeUrl = "https://sourabh-sawant-portfolio.netlify.app/documents/Sourabh%20Sawant%20Resume.pdf";
   
-  const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(resumeUrl)}`;
+  // Use Google's Chart API for QR code generation which tends to be more reliable
+  const qrCodeUrl = `https://chart.googleapis.com/chart?cht=qr&chl=${encodeURIComponent(resumeUrl)}&chs=150x150&choe=UTF-8`;
   
   return (
     <section id="about" className="py-20 px-4 md:px-12 lg:px-24 bg-primary">
