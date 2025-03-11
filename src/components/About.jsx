@@ -1,12 +1,6 @@
 import { motion } from 'framer-motion';
 
 const About = () => {
-  // Use a direct Netlify URL for the resume
-  const resumeUrl = "https://sourabh-sawant-portfolio.netlify.app/documents/Sourabh%20Sawant%20Resume.pdf";
-  
-  // Use Google's Chart API for QR code generation which tends to be more reliable
-  const qrCodeUrl = `https://chart.googleapis.com/chart?cht=qr&chl=${encodeURIComponent(resumeUrl)}&chs=150x150&choe=UTF-8`;
-  
   return (
     <section id="about" className="py-20 px-4 md:px-12 lg:px-24 bg-primary">
       <div className="max-w-5xl mx-auto">
@@ -19,7 +13,7 @@ const About = () => {
         
         <div className="flex flex-col md:flex-row gap-12 items-center">
           <div className="w-full md:w-1/3 flex flex-col items-center">
-            <div className="w-64 h-64 rounded-full overflow-hidden mb-6">
+            <div className="w-72 h-72 rounded-full overflow-hidden mb-6 shadow-xl border-4 border-secondary/20">
               <img 
                 src="/images/profile%20photo.jpg" 
                 alt="Sourabh Sawant" 
@@ -30,17 +24,8 @@ const About = () => {
                 }}
               />
             </div>
-            
-            <div className="flex flex-col items-center mt-4">
-              <p className="text-lightText font-medium mb-2">Scan to download my resume</p>
-              <div className="qr-container">
-                <img 
-                  src={qrCodeUrl} 
-                  alt="Resume QR Code" 
-                  className="w-32 h-32 border-2 border-secondary p-1 rounded-md"
-                />
-              </div>
-            </div>
+            <h3 className="text-xl font-bold text-secondary mt-4">Sourabh Sawant</h3>
+            <p className="text-lightText/80 text-center mt-2">Software Developer</p>
           </div>
           
           <div className="w-full md:w-2/3">
