@@ -1,61 +1,67 @@
 import { motion } from 'framer-motion';
 
 const About = () => {
+  // Generate a QR code URL that points directly to your resume on your Netlify site
+  const resumeUrl = "https://sourabh-sawant-portfolio.netlify.app/documents/Sourabh%20Sawant%20Resume.pdf";
+  
+  const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(resumeUrl)}`;
+  
   return (
-    <section id="about" className="pt-12 pb-20 px-4 md:px-12 lg:px-24">
+    <section id="about" className="py-20 px-4 md:px-12 lg:px-24 bg-primary">
       <div className="max-w-5xl mx-auto">
-        <motion.h2 
-          className="section-title"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.5 }}
-        >
-          About Me
-        </motion.h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+          <span className="relative inline-block">
+            About Me
+            <span className="absolute bottom-0 left-0 w-full h-1 bg-secondary"></span>
+          </span>
+        </h2>
         
-        <div className="grid md:grid-cols-2 gap-8 items-center mt-10">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            <div className="relative w-full max-w-md mx-auto aspect-square">
-              {/* Decorative border */}
-              <div className="absolute inset-0 border-2 border-secondary rounded-md transform translate-x-5 translate-y-5 z-0"></div>
-              
-              {/* Image container */}
-              <div className="absolute inset-0 bg-tertiary rounded-md overflow-hidden shadow-md z-10">
+        <div className="flex flex-col md:flex-row gap-12 items-center">
+          <div className="w-full md:w-1/3 flex flex-col items-center">
+            <div className="w-64 h-64 rounded-full overflow-hidden mb-6">
+              <img 
+                src="/images/profile%20photo.jpg" 
+                alt="Sourabh Sawant" 
+                className="w-full h-full object-cover"
+                style={{ 
+                  objectPosition: "center 10%",
+                  transform: "scale(1.1)" 
+                }}
+              />
+            </div>
+            
+            <div className="flex flex-col items-center mt-4">
+              <p className="text-lightText font-medium mb-2">Scan to download my resume</p>
+              <div className="qr-container">
                 <img 
-                  src="/images/profile photo.jpg" 
-                  alt="Sourabh Sawant" 
-                  className="w-full h-full object-cover object-center"
-                  style={{ objectPosition: "center top" }}
+                  src={qrCodeUrl} 
+                  alt="Resume QR Code" 
+                  className="w-32 h-32 border-2 border-secondary p-1 rounded-md"
                 />
               </div>
             </div>
-          </motion.div>
+          </div>
           
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            <p className="text-darkText mb-4">
-              Hello! I'm Sourabh, a passionate software developer with a strong foundation in building web applications and software solutions. My journey in technology began with a curiosity about how digital products work and evolved into a career focused on creating efficient, user-friendly applications.
+          <div className="w-full md:w-2/3">
+            <p className="text-darkText mb-6 text-lg">
+              I'm a <span className="highlight">software developer</span> with a passion for creating beautiful, functional, 
+              and user-centered digital experiences. With a background in computer science and a 
+              keen eye for design, I strive to build applications that are not only technically sound 
+              but also intuitive and accessible.
             </p>
-            <p className="text-darkText mb-4">
-              I specialize in both frontend and backend development, with expertise in technologies like Java, Spring Boot, React.js, .NET, and MySQL. I enjoy solving complex problems and turning ideas into reality through clean, maintainable code.
+            
+            <p className="text-darkText mb-6 text-lg">
+              My journey in web development started with HTML, CSS, and JavaScript, and has evolved to 
+              include modern frameworks like React and tools like Vite and Tailwind CSS. I'm constantly 
+              learning and exploring new technologies to enhance my skill set.
             </p>
-            <p className="text-darkText mb-4">
-              When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or enhancing my skills through continuous learning. I believe in creating software that not only meets technical requirements but also provides an exceptional user experience.
+            
+            <p className="text-darkText text-lg">
+              When I'm not coding, you can find me exploring new technologies, contributing to open-source 
+              projects, or enjoying outdoor activities. I believe in continuous learning and am always 
+              looking for new challenges to tackle.
             </p>
-            <p className="text-darkText">
-              I'm always open to new opportunities and collaborations. Feel free to reach out if you'd like to work together or just have a chat about technology!
-            </p>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

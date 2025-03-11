@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
-import { FaGithub, FaLinkedin, FaChevronDown } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaChevronDown, FaDownload, FaEye, FaEnvelope } from 'react-icons/fa';
 import { Link } from 'react-scroll';
 
 const Hero = () => {
@@ -218,11 +218,28 @@ const Hero = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
         >
           <Link to="projects" smooth={true} duration={800}>
-            <button className="btn-primary animate-pulse-custom">View My Work</button>
+            <button className="btn-primary animate-pulse-custom">
+              <span className="flex items-center gap-2">
+                <FaEye /> View My Work
+              </span>
+            </button>
           </Link>
           <Link to="contact" smooth={true} duration={1000}>
-            <button className="btn-primary animate-pulse-custom">Contact Me</button>
+            <button className="btn-primary animate-pulse-custom">
+              <span className="flex items-center gap-2">
+                <FaEnvelope /> Contact Me
+              </span>
+            </button>
           </Link>
+          <a 
+            href="/documents/Sourabh%20Sawant%20Resume.pdf" 
+            download="Sourabh_Sawant_Resume"
+            className="btn-primary animate-pulse-custom"
+          >
+            <span className="flex items-center gap-2">
+              <FaDownload /> Download Resume
+            </span>
+          </a>
         </motion.div>
         
         <motion.div 

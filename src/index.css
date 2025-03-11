@@ -117,4 +117,52 @@ body {
 
 .animate-pulse-custom {
   animation: pulse 2s infinite;
+}
+
+/* Remove the previous animation that's not working */
+.animate-pulse-custom::before {
+  content: none;
+}
+
+@keyframes pulse-animation {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Resume download button */
+a[download] {
+  transition: all 0.3s ease;
+}
+
+a[download]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(100, 255, 218, 0.2);
+}
+
+/* QR code container */
+.qr-container {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+
+.qr-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure download button has same styling */
+a.btn-primary {
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
 } 
