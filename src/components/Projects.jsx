@@ -18,7 +18,7 @@ const Projects = () => {
       title: 'Ayurvedic Clinic Management System',
       description: 'A complete clinic management solution for Ayurvedic practitioners. Includes patient records, appointment scheduling, treatment plans, inventory management, and billing features.',
       technologies: ['Java', 'Spring Boot', 'React.js', 'Hibernate', 'MySQL'],
-      github: '#',
+      github: 'https://github.com/if-sourabhsawant',
       demo: '#',
       image: '/images/Home2.jpg'
     }
